@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Pasteleria</title>
+    <!-- Librería Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Lenguaje CSS -->
+    <link rel="stylesheet" href="./Css/style.css">
+    
+</head>
+<body>
+    <header>
+        <!-- barra de navegacion -->
+        <div class="container-fluid ajuste">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark border-4 border-bottom border-primary">
+              <div class="container-fluid">
+                <div class="div__logo">
+                  <a class="navbar-brand" href="../index.html">La Pastelería</a>
+                </div>
+                  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Menu">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                    <div class="collapse navbar-collapse" id="Menu">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="./Inicio.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./Productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./recetas.html">Recetas</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./Quienes-somos.html">Quienes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./Contacto.html">Contacto</a>
+                        </li>
+                      </ul>
+                      <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                      </form>
+                    </div>
+                </div>
+            </nav>
+          </div>
+          <!-- fin barra de navegacion -->
+        
+          <!-- producto carrito javascript -->
+        <div class="header-section container">
+            <h1 class="logo-titulo">Nuestros productos</h1>
+            <!-- <img class="logo" src="" alt=""> -->
+            <div>
+                <img onmouseup="showCart(this)" class="cart" src="./image/shopping-cart.png" alt="logo-cart">
+                <p class="count-product">0</p>
+            </div>
+            <div class="cart-products" id="products-id">
+                <p class="close-btn" onclick="closeBtn()">X</p>
+                <h3>Mi carrito</h3>
+                <div class="card-items">
+                    <!-- <div class="item">
+                        <img src="" alt="">
+                        <div class="item-content">
+                            <h5></h5>
+                            <h5 class="cart-price">0$</h5>
+                            <h6>Cantidad: 0</h6>
+                        </div>
+                        <span>X</span>
+                    </div>
+    
+                    <div class="item">
+                        <img src="" alt="">
+                        <div class="item-content">
+                            <h5></h5>
+                            <h5 class="cart-price">0$</h5>
+                            <h6>Cantidad: 0</h6>
+                        </div>
+                        <span class="delete-product" data-id="">X</span>
+                    </div> -->
+                </div>
+                <button class="btn btn-danger btn-sm" id="vaciar-carrito">Vaciar Carrito</button>
+                <button class="btn btn-primary btn-sm" id="Comprar">Comprar</button>
+                <h2>Total: <strong class="price-total">0</strong> $</h2>
+            </div>
+        </div>
+        <!-- fin producto carrito javascript -->
+    </header>
+    <section class="container">
+        <div class="products">
+            <div class="carts">
+                <div>
+                    <img src="./image/Producto-1.jpeg" alt="">
+                    <p><span>3000</span>$</p>
+                </div>
+                <p class="title">Placer Fundido</p>
+                <a href="" data-id="1" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./image/Producto-2.jpg" alt="">
+                    <p><span>3100</span>$</p>
+                </div>
+                <p class="title">Frutillas Crazy</p>
+                <a href="" class="btn-add-cart" data-id="2">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./image/Producto-3.jpg" alt="">
+                    <p><span>2500</span>$</p>
+                </div>
+                <p class="title">Golosinera</p>
+                <a href="" data-id="3" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./image/Producto-4.jpg" alt="">
+                    <p><span>2750</span>$</p>
+                </div>
+                <p class="title">Chispitas</p>
+                <a href="" data-id="4" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./image/Producto-5.jpg" alt="">
+                    <p><span>2500</span>$</p>
+                </div>
+                <p class="title">Oreos Heladas</p>
+                <a href="" data-id="5" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./image/Producto-6.jpg" alt="">
+                    <p><span>3000</span>$</p>
+                </div>
+                <p class="title"> Triple Tentacion</p>
+                <a href="" data-id="6" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./image/Producto-7.jpg" alt="">
+                    <p><span>3200</span>$</p>
+                </div>
+                <p class="title">Vegan</p>
+                <a href="" data-id="7" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./image/Producto-8.jpg" alt="">
+                    <p><span>3000</span>$</p>
+                </div>
+                <p class="title">Oreos Funny</p>
+                <a href="" data-id="8" class="btn-add-cart">add to cart</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container__footer">
+            <div class="container pt-4">
+              <!-- Section: Social media -->
+                <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://m.facebook.com/login/?locale=es_ES" target="blank" role="button" data-mdb-ripple-color="dark"><img src="./image/social_facebook_fb_35.png"></a>
+        
+                <!-- Whatsapp -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.whatsapp.com/?lang=es" target="blank" role="button" data-mdb-ripple-color="dark"><img src="./image/whatsapp_black_logo_icon_147050.png"></a>
+        
+                <!-- Gmail -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.gmail.com/mail/help/intl/es/about.html?iframe" target="blank" role="button" data-mdb-ripple-color="dark"><img src="./image/1490129331-rounded07_82197.png"></a>
+        
+                <!-- Instagram -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/?hl=es-la" target="blank" role="button" data-mdb-ripple-color="dark"><img src="./image/instagram_black_logo_icon_147122.png"></a>
+        
+              <!-- Google Maps -->
+              <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.google.com.ar/maps" target="blank" role="button" data-mdb-ripple-color="dark"><img src="./image/google_maps_icon_138521.png"></a>
+              </section>
+              <!-- Section: Social media -->
+            </div>
+            <div class="container__subfooter">
+              <p>Copyright &copy; La Pastelería 2021. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Libreria javascript -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function showCart(x){
+            document.getElementById("products-id").style.display = "block";
+        }
+        function closeBtn(){
+             document.getElementById("products-id").style.display = "none";
+        }
+
+    </script>
+    <script src="./Js/script.js" ></script>
+</body>
+</html>
