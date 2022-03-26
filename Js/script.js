@@ -9,6 +9,25 @@ let buyThings = [];
 let totalCard = 0;
 let countProduct = 0;
 
+//Guardado en local storage
+function guardarProductosLocalStorage(){
+    let productos;
+    productos = this.obtenerProductosLs();
+    productos.push();
+    localStorage.setItem('productos', JSON.stringify(productos));
+}
+//Cargar datos del Local Storage
+function obtenerProductosLocalStorage(){
+    let productoLS;
+    if(localStorage.getItem('productos') === null){
+        productoLS = [];
+    }
+    else{
+        productoLS = JSON.parse(localStorage.getItem('productos'));
+    }
+    return productoLS;
+}
+
 //Evento Listeners
 loadEventListenrs();
 function loadEventListenrs(){
@@ -69,7 +88,6 @@ function deleteProduct(e) {
     loadHtml();
 }
 
-
 // borra el carrito del DOM y la lógica
 const cleanCart = () => {
     document.querySelector('.price-total').innerHTML = 0; //se limpia el precio total del carrito al confirmar en el DOM
@@ -80,8 +98,6 @@ const cleanCart = () => {
 }
 //Vaciar Carrito
 function vaciarCarrito(){
-    while(containerBuyCart.firstChild){
-        containerBuyCart.removeChild(containerBuyCart.firstChild);
 
 //Se agrego una alerta "Si desea vaciar el carrito".
         Swal.fire({
@@ -94,7 +110,10 @@ function vaciarCarrito(){
             confirmButtonText: 'Sí, borrar!'
           }).then((result) => {
             if (result.isConfirmed) {
+                while(containerBuyCart.firstChild){
+                    containerBuyCart.removeChild(containerBuyCart.firstChild);
                 cleanCart();//Limpiar carrito
+                }
               Swal.fire(
                 'Borrado!',
                 'Tu carrito se encuentra vacío.',
@@ -102,9 +121,9 @@ function vaciarCarrito(){
               )
             }
           })
-    }
     return false;
 }
+
 
 //Funcion para mostrar informacion del producto + funcion añadir/concatenar producto al carrito + contador productos distintos
 function readTheContent(product){
@@ -133,7 +152,7 @@ function readTheContent(product){
     } else {
         buyThings = [...buyThings, infoProduct]
         countProduct++;
-    }
+    }  
     loadHtml();
     //console.log(infoProduct);
 }
@@ -165,4 +184,3 @@ function loadHtml(){
  function clearHtml(){
     containerBuyCart.innerHTML = '';
 }
-
