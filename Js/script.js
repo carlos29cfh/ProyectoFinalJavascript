@@ -9,7 +9,7 @@ let buyThings = [];
 let totalCard = 0;
 let countProduct = 0;
 
-//Guardado en local storage
+/*//Guardado en local storage
 function guardarProductosLocalStorage(){
     let productos;
     productos = this.obtenerProductosLs();
@@ -26,7 +26,7 @@ function obtenerProductosLocalStorage(){
         productoLS = JSON.parse(localStorage.getItem('productos'));
     }
     return productoLS;
-}
+}*/
 
 //Evento Listeners
 loadEventListenrs();
