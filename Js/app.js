@@ -16,15 +16,23 @@ const fetchData = async () => {
     }
 }
 
+let containerProducto = document.getElementsByClassName("products")
+
 const pintarCards = data =>{
     data.forEach(producto => {
-        allContainerCart.querySelector('div img').src,
-        allContainerCart.querySelector('.title').textContent,
-        allContainerCart.querySelector('div p span').textContent,
-        allContainerCart.querySelector('a').getAttribute('data-id')
+        containerProducto.innerHTML = `<div>
+                                    <img src="./image/Producto-1.jpeg" alt="">
+                                    <p><span>3000</span>$</p>
+                                    </div>
+                                    <p class="title">Placer Fundido</p>
+                                    <a href="" data-id="1" class="btn-add-cart">add to cart</a>
+                                    </div>`
 
-        const clone = allContainerCart.cloneNode(true)
-        fragment.appendChild(clone)
-    })
-    containerBuyCart.appendChild(fragment)
+
+
+const clone = allContainerCart.cloneNode(true)
+
+fragment.appendChild(clone)
+})
+containerBuyCart.appendChild(fragment)
 }

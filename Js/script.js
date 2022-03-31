@@ -137,7 +137,7 @@ function readTheContent(product){
 
     totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
     totalCard = totalCard.toFixed(2);
-
+    
     const exist = buyThings.some(product => product.id === infoProduct.id);
     if (exist) {
         const pro = buyThings.map(product => {
@@ -152,7 +152,7 @@ function readTheContent(product){
     } else {
         buyThings = [...buyThings, infoProduct]
         countProduct++;
-    }  
+    }
     loadHtml();
     //console.log(infoProduct);
 }
